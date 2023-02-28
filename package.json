@@ -11,5 +11,11 @@
         "laravel-vite-plugin": "^0.7.2",
         "sass": "^1.56.1",
         "vite": "^4.0.0"
+    },
+    "name": "beneficiodecafe",
+    "description": "a really cool app",
+    "version": "1.0.0",
+    "engines": {
+        "node": "18.x"
     }
 }
