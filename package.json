@@ -16,6 +16,7 @@
     "description": "beneficio de cafe descripcion",
     "version": "0.0.1",
     "engines": {
-        "npm": "7.x"
+        "npm": "7.x",
+        "node": "18.x"
     }
 }
