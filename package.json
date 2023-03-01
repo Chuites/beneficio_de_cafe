@@ -11,5 +11,11 @@
         "laravel-vite-plugin": "^0.7.2",
         "sass": "^1.56.1",
         "vite": "^4.0.0"
+    },
+    "name": "beneficio_de_cafe",
+    "description": "beneficio de cafe descripcion",
+    "version": "0.0.1",
+    "engines": {
+        "npm": "7.x"
     }
 }
