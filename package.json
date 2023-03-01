@@ -12,6 +12,9 @@
         "sass": "^1.56.1",
         "vite": "^4.0.0"
     },
+    "name": "beneficiodecafe",
+    "description": "a really cool app",
+    "version": "1.0.0",
     "engines": {
         "npm": "7.x",
         "node": "18.x"
