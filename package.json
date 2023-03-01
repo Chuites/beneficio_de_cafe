@@ -12,9 +12,6 @@
         "sass": "^1.56.1",
         "vite": "^4.0.0"
     },
-    "name": "beneficio_de_cafe",
-    "description": "beneficio de cafe descripcion",
-    "version": "0.0.1",
     "engines": {
         "npm": "7.x",
         "node": "18.x"
