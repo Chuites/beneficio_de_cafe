@@ -1,6 +1,6 @@
-<script src="{{ asset('jquery/jquery.js') }}"></script>
-<script src="{{ asset('js/bootstrap.js') }}"></script>
-<script src="{{ asset('js_icons/all.js') }}"></script>
+<script src="{{ secure_asset('jquery/jquery.js') }}"></script>
+<script src="{{ secure_asset('js/bootstrap.js') }}"></script>
+<script src="{{ secure_asset('js_icons/all.js') }}"></script>
 
 <script>
 
