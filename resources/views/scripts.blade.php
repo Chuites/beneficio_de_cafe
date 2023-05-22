@@ -1,6 +1,7 @@
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js_icons/all.js') }}"></script>
 <script src="{{ asset('jquery/jquery.js') }}"></script>
+<script src="{{ asset('js/bootstrap.js') }}"></script>
+<script src="{{ asset('js_icons/all.js') }}"></script>
+
 <script>
 
     $(document).ready(function() {
