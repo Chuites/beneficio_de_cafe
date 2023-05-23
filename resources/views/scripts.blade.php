@@ -67,7 +67,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             type: 'POST',
-            url: "{{route('listadoPilotos')}}",
+            url: modifyURLScheme("{{route('listadoPilotos')}}", "https"),
             data: {
                 "id": "testid"
             },
@@ -106,7 +106,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             type: 'POST',
-            url: "{{route('listadoTransportes')}}",
+            url: modifyURLScheme("{{route('listadoTransportes')}}", "https"),
             data: {
                 "id": "testid"
             },
@@ -155,7 +155,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             type: 'POST',
-            url: "{{route('listadoAgricultores')}}",
+            url: modifyURLScheme("{{route('listadoAgricultores')}}", "https"),
             data: {
                 "id": "testid"
             },
