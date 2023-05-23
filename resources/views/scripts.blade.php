@@ -12,7 +12,7 @@
         $('#agricultores_div').hide();
     });
 
-    $("#btn_cargamentos").click(function(e){
+    $("#btn_cargamentos").click(function(e) {
         $('#cargamentos_div').show();
         $('#piloto_div').hide();
         $('#transporte_div').hide();
@@ -23,7 +23,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             type: 'POST',
-            url: "{{route('listadoCargamentos')}}",
+            url: modifyURLScheme("{{ route('listadoCargamentos') }}", "https"),
             data: {
                 "id": "testid"
             },
@@ -51,6 +51,10 @@
             }
         });
     });
+
+    function modifyURLScheme(url, scheme) {
+        return url.replace(/^http:/i, scheme + ":");
+    }
 
     $("#btn_piloto").click(function(e){
         $('#piloto_div').show();
