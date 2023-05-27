@@ -12,3 +12,4 @@ Route::post('listadoCargamentos', 'App\Http\Controllers\InicioController@listado
 Route::post('listadoPilotos', 'App\Http\Controllers\InicioController@listadoPilotos')->name("listadoPilotos");
 Route::post('listadoTransportes', 'App\Http\Controllers\InicioController@listadoTransportes')->name("listadoTransportes");
 Route::post('listadoAgricultores', 'App\Http\Controllers\InicioController@listadoAgricultores')->name("listadoAgricultores");
+Route::post('confirmaCuenta', 'App\Http\Controllers\InicioController@confirmaCuenta')->name("confirmaCuenta");

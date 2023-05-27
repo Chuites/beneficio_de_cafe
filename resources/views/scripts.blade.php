@@ -24,6 +24,7 @@
             },
             type: 'POST',
             url: modifyURLScheme("{{ route('listadoCargamentos') }}", "https"),
+            //url: "{{ route('listadoCargamentos') }}",
             data: {
                 "id": "testid"
             },
@@ -36,12 +37,10 @@
                 $.each(data, function(index, data) {
                     var row = $('<tr>');
                     row.append($('<td>').text(data.id_cargamento));
-                    row.append($('<td>').text(data.id_agricultor));
+                    row.append($('<td>').text(data.name));
                     row.append($('<td>').text(data.peso));
                     row.append($('<td>').text(data.parcialidades));
-                    row.append($('<td>').text(data.id_estado_cargamento));
-                    var btn = $('<button>').text('Acción').addClass('btn btn-outline-success');
-                    row.append($('<td>').append(btn));
+                    row.append($('<td>').text(data.justificacion));
                     tbody.append(row);
                 });
             },
@@ -56,6 +55,46 @@
         return url.replace(/^http:/i, scheme + ":");
     }
 
+
+    $("#btnConfirmarCuenta").click(function(e){
+        if($("#id_cargamento").val() == ''){
+            alert('Debe ingresar el No. de Cargamento')
+        }else{
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: 'POST',
+                url: modifyURLScheme("{{route('listadoPilotos')}}", "https"),
+                //url: "{{route('confirmaCuenta')}}",
+                data: {
+                    id_cargamento: $("#id_cargamento").val()
+                },
+                dataType: 'json',
+                success: function(data) {
+                    alert(data.mensaje);
+                    /* // Construir la tabla dinámica con los datos recibidos
+                    var tbody = $('#tabla-dinamica tbody');
+                    tbody.empty();
+                    // Recorrer los datos y agregar filas a la tabla
+                    $.each(data, function(index, data) {
+                        var row = $('<tr>');
+                        row.append($('<td>').text(data.id_cargamento));
+                        row.append($('<td>').text(data.id_agricultor));
+                        row.append($('<td>').text(data.peso));
+                        row.append($('<td>').text(data.parcialidades));
+                        row.append($('<td>').text(data.id_estado_cargamento));
+                        tbody.append(row);
+                    }); */
+                },
+                error: function(data) {
+                    console.log(data);
+                    alert('Error al consultar los datos');
+                }
+            });
+        }
+    });
+
     $("#btn_piloto").click(function(e){
         $('#piloto_div').show();
         $('#cargamentos_div').hide();
@@ -68,6 +107,7 @@
             },
             type: 'POST',
             url: modifyURLScheme("{{route('listadoPilotos')}}", "https"),
+            //url: "{{route('listadoPilotos')}}",
             data: {
                 "id": "testid"
             },
@@ -107,6 +147,7 @@
             },
             type: 'POST',
             url: modifyURLScheme("{{route('listadoTransportes')}}", "https"),
+            //url: "{{route('listadoTransportes')}}",
             data: {
                 "id": "testid"
             },
@@ -156,6 +197,7 @@
             },
             type: 'POST',
             url: modifyURLScheme("{{route('listadoAgricultores')}}", "https"),
+            //url: "{{route('listadoAgricultores')}}",
             data: {
                 "id": "testid"
             },

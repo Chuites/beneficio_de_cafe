@@ -8,4 +8,5 @@ class Cargamento extends Model
 {
     protected $table = 'cargamento';
     public $timestamps = false;
+    protected $primaryKey = 'id_cargamento';
 }
