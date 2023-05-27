@@ -65,7 +65,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 type: 'POST',
-                url: modifyURLScheme("{{route('listadoPilotos')}}", "https"),
+                url: modifyURLScheme("{{route('confirmaCuenta')}}", "https"),
                 //url: "{{route('confirmaCuenta')}}",
                 data: {
                     id_cargamento: $("#id_cargamento").val()
