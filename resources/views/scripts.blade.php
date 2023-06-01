@@ -260,7 +260,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 type: 'POST',
-                url: modifyURLScheme("{{ route('listadoCargamentos') }}", "https"),
+                url: modifyURLScheme("{{ route('listadoCargamentosReporte') }}", "https"),
                 //url: "{{ route('listadoCargamentosReporte') }}",
                 data: {
                     fh_inicio: fechaInicioFormatted,
