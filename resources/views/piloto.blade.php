@@ -8,7 +8,6 @@
                     <th scope="col">Telefono</th>
                     <th scope="col">DPI</th>
                     <th scope="col">Estado</th>
-                    <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody></tbody>

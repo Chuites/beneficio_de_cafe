@@ -29,6 +29,28 @@ class InicioController extends BaseController
         return response()->json($cargamentos, 200);
     }
 
+    public function listadoCargamentosReporte(Request $request){
+        $fh_inicio = $request->fh_inicio;
+        $fh_fin = $request->fh_fin;
+        logger($fh_inicio);
+
+        $cargamentos = Cargamento::join('users', 'cargamento.id_agricultor', '=', 'users.id')
+            ->join('estado_cargamento', 'cargamento.id_estado_cargamento', '=', 'estado_cargamento.id_estado_cargamento')
+            ->select('cargamento.id_cargamento', 'users.name', 'cargamento.peso', 'cargamento.parcialidades', 'estado_cargamento.justificacion')
+            ->whereBetween('cargamento.fh_creacion', [$fh_inicio, $fh_fin])
+            ->get();
+        if($cargamentos->count() == 0)
+        {
+            $data = [
+                'mensaje' => 'No se encontraron resultados'
+            ];
+            return response()->json($data, 200);
+        }else{
+            return response()->json($cargamentos, 200);
+        }
+    }
+
+
     public function listadoPilotos(Request $request){
         $pilotos = Piloto::all();
         return response()->json($pilotos, 200);

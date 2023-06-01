@@ -3,9 +3,29 @@
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Beneficio de Cafe</title>
-    <link rel="stylesheet" href="{{ secure_asset('css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ secure_asset('css_icons/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css_icons/all.css') }}">
 </head>
+<style>
+    #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 9999;
+        }
+
+        #loading-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: #fff;
+        }
+</style>
 <body>
 @csrf
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -28,6 +48,9 @@
                 <li class="nav-item">
                     <a class="nav-link" id="btn_transporte" href="#">Transporte</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="btn_reportes" href="#">Reportes</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -46,8 +69,14 @@
     @include('piloto')
     @include('transporte')
     @include('agricultores')
+    @include('reportes')
 </div>
     @include('scripts')
 </body>
+<div id="loading-overlay" style="display:none;">
+    <div id="loading-message">
+        <i class='bx bx-cog bx-spin' ></i>Cargando...
+    </div>
+</div>
 </html>
 
