@@ -1,6 +1,6 @@
-<script src="{{ asset('jquery/jquery.js') }}"></script>
-<script src="{{ asset('js/bootstrap.js') }}"></script>
-<script src="{{ asset('js_icons/all.js') }}"></script>
+<script src="{{ secure_asset('jquery/jquery.js') }}"></script>
+<script src="{{ secure_asset('js/bootstrap.js') }}"></script>
+<script src="{{ secure_asset('js_icons/all.js') }}"></script>
 
 <script>
 
@@ -40,8 +40,8 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             type: 'POST',
-            //url: modifyURLScheme("{{ route('listadoCargamentos') }}", "https"),
-            url: "{{ route('listadoCargamentos') }}",
+            url: modifyURLScheme("{{ route('listadoCargamentos') }}", "https"),
+            //url: "{{ route('listadoCargamentos') }}",
             data: {
                 "id": "testid"
             },
@@ -82,8 +82,8 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 type: 'POST',
-                //url: modifyURLScheme("{{route('confirmaCuenta')}}", "https"),
-                url: "{{route('confirmaCuenta')}}",
+                url: modifyURLScheme("{{route('confirmaCuenta')}}", "https"),
+                //url: "{{route('confirmaCuenta')}}",
                 data: {
                     id_cargamento: $("#id_cargamento").val()
                 },
@@ -111,8 +111,8 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             type: 'POST',
-            //url: modifyURLScheme("{{route('listadoPilotos')}}", "https"),
-            url: "{{route('listadoPilotos')}}",
+            url: modifyURLScheme("{{route('listadoPilotos')}}", "https"),
+            //url: "{{route('listadoPilotos')}}",
             data: {
                 "id": "testid"
             },
@@ -150,8 +150,8 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             type: 'POST',
-            //url: modifyURLScheme("{{route('listadoTransportes')}}", "https"),
-            url: "{{route('listadoTransportes')}}",
+            url: modifyURLScheme("{{route('listadoTransportes')}}", "https"),
+            //url: "{{route('listadoTransportes')}}",
             data: {
                 "id": "testid"
             },
@@ -200,8 +200,8 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             type: 'POST',
-            //url: modifyURLScheme("{{route('listadoAgricultores')}}", "https"),
-            url: "{{route('listadoAgricultores')}}",
+            url: modifyURLScheme("{{route('listadoAgricultores')}}", "https"),
+            //url: "{{route('listadoAgricultores')}}",
             data: {
                 "id": "testid"
             },
@@ -260,8 +260,8 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 type: 'POST',
-                //url: modifyURLScheme("{{ route('listadoCargamentos') }}", "https"),
-                url: "{{ route('listadoCargamentosReporte') }}",
+                url: modifyURLScheme("{{ route('listadoCargamentos') }}", "https"),
+                //url: "{{ route('listadoCargamentosReporte') }}",
                 data: {
                     fh_inicio: fechaInicioFormatted,
                     fh_fin: fechaFinFormatted
