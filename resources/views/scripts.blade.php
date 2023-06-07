@@ -90,6 +90,8 @@
                 dataType: 'json',
                 success: function(data) {
                     alert(data.mensaje);
+                    $('#idCargamentoPDF').val($("#id_cargamento").val());
+                    $('#form_generarPDF').submit();
                 },
                 error: function(data) {
                     console.log(data);
@@ -122,12 +124,13 @@
                 var tbody = $('#tabla-dinamica tbody');
                 tbody.empty();
                 // Recorrer los datos y agregar filas a la tabla
+                console.log(data);
                 $.each(data, function(index, data) {
                     var row = $('<tr>');
                     row.append($('<td>').text(data.nombre_completo));
                     row.append($('<td>').text(data.telefono));
                     row.append($('<td>').text(data.dpi));
-                    row.append($('<td>').text(data.id_estado_piloto));
+                    row.append($('<td>').text(data.justificacion));
                     tbody.append(row);
                 });
             },
@@ -168,7 +171,7 @@
                     row.append($('<td>').text(data.marca));
                     row.append($('<td>').text(data.modelo));
                     row.append($('<td>').text(data.color));
-                    row.append($('<td>').text(data.id_estado_transporte));
+                    row.append($('<td>').text(data.justificacion));
                     tbody.append(row);
                 });
             },
@@ -216,7 +219,7 @@
                     row.append($('<td>').text(data.id));
                     row.append($('<td>').text(data.name));
                     row.append($('<td>').text(data.email));
-                    row.append($('<td>').text(data.id_estado_agricultor));
+                    row.append($('<td>').text(data.justificacion));
                     tbody.append(row);
                 });
             },
@@ -294,6 +297,20 @@
             });
             }
         }
+    });
+
+    $("#logout").click(function(e){
+        $.ajax({
+            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+            type: "POST",
+            url: "{{route('logout')}}",
+            data: { "id": "testid" },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(data) {
+                window.location = "{{ url('/') }}";
+            },
+        });
     });
 
     // Mostrar la alerta durante 5 segundos

@@ -22,5 +22,9 @@
             </thead>
             <tbody></tbody>
         </table>
+        <form method="POST" action="{{route('generarPDF')}}" id="form_generarPDF">
+            @csrf
+            <input type="hidden" name="idCargamentoPDF" id="idCargamentoPDF" target="_blank">
+        </form>
     </div>
 </div>

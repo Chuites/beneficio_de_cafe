@@ -51,6 +51,9 @@
                 <li class="nav-item">
                     <a class="nav-link" id="btn_reportes" href="#">Reportes</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="logout" href="#">Logout</a><i class="bi bi-power"></i>
+                </li>
             </ul>
         </div>
     </div>
