@@ -146,10 +146,10 @@ class InicioController extends BaseController
         }
     }
 
-    public function generarPDF(Request $request){
-        $id_cargamento = $request->idCargamentoPDF;
-        $peso_certificado = Parcialidades::where('id_cargamento', $request->idCargamentoPDF)->sum('peso_certificado');
-        $cargamento = Cargamento::where('id_cargamento', $request->idCargamentoPDF)->first();
+    public function generarPDF(Request $request, $id_cargamento){
+        $id_cargamento;
+        $peso_certificado = Parcialidades::where('id_cargamento', $id_cargamento)->sum('peso_certificado');
+        $cargamento = Cargamento::where('id_cargamento', $id_cargamento)->first();
         $peso_total = $cargamento->peso;
         $mayor_permitido = ($peso_total * 0.05) + $peso_total;
         $menor_permitido = (($peso_total * 0.05) *-1) + $peso_total;

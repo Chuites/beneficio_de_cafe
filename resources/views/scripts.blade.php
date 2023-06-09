@@ -90,8 +90,12 @@
                 dataType: 'json',
                 success: function(data) {
                     alert(data.mensaje);
+
+                    var url = "{{ route('generarPDF') }}" + $('#id_cargamento').val();
+                    window.open(url, '_blank');
+                    /* url: modifyURLScheme("{{route('generarPDF')}}", "https"),
                     $('#idCargamentoPDF').val($("#id_cargamento").val());
-                    $('#form_generarPDF').submit();
+                    $('#form_generarPDF').submit(); */
                 },
                 error: function(data) {
                     console.log(data);
